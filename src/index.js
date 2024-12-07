@@ -4,10 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//Debemos importar el "store"
+import storeF from './redux/store'
+
+//importamos un paquete Provider para conectar a Redux con React
+import {Provider} from 'react-redux';
+
+const store = storeF();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
